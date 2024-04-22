@@ -8,7 +8,10 @@ public class BestTimeToBuyAndSellStock {
     
     
     private static int maxProfit(int[] prices){
-        
+
+        //time complexity 0(1)
+        //space complexity O(1)
+
         int buy = prices[0];
         int profit = 0;
 
