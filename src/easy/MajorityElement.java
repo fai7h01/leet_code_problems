@@ -32,11 +32,9 @@ public class MajorityElement {
     }
 
     private static int majorityElement2(int[] nums){
-
         Arrays.sort(nums);
         int length = nums.length;
         return nums[length/2];
-
     }
 
 }
