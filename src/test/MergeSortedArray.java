@@ -11,19 +11,27 @@ public class MergeSortedArray {
 
     static int[] merge(int[] nums1, int m, int[] nums2, int n){
 
-        int k = m - 1;
-        int j = n - 1;
-        int l = m + n - 1;
+        // m = 3
+        // size -> m + n = nums1.length              n = 3
+        // 1,2,2,3,5,6                 2,5,6
+        int lastNonZeroElementIndexInNums1 = m - 1;
+        int lastIndextInNums2 = n - 1;
+        int lastIndexOfNums1 = m + n - 1;
 
-        while(j >= 0){
-            if (k >= 0 && nums1[k] > nums2[j]){
-                nums1[l--] = nums1[k--];
+        while(lastIndextInNums2 >= 0){
+            if (lastNonZeroElementIndexInNums1 >= 0 && nums1[lastNonZeroElementIndexInNums1] < nums2[lastIndextInNums2]){
+                nums1[lastIndexOfNums1] = nums2[lastIndextInNums2];
+                lastIndexOfNums1--;
+                lastIndextInNums2--;
             }else{
-                nums1[l--] = nums2[j--];
+                nums1[lastIndexOfNums1] = nums1[lastNonZeroElementIndexInNums1];
+                lastIndexOfNums1--;
+                lastNonZeroElementIndexInNums1--;
             }
+            System.out.println(Arrays.toString(nums1));
         }
-
         return nums1;
+
     }
 
 

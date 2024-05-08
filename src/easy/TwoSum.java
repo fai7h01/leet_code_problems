@@ -7,7 +7,7 @@ import java.util.Map;
 public class TwoSum {
 
     public static void main(String[] args) {
-        int[] nums = {2,0,11,7};
+        int[] nums = {2,0,11,7}; // length -> n
         int target = 9;
         System.out.println(Arrays.toString(twoSumBruteForce(nums, target)));
         System.out.println(Arrays.toString(twoSumHashMap(nums, target)));
@@ -15,7 +15,6 @@ public class TwoSum {
     }
 
     static int[] twoSumBruteForce(int[] nums, int target){ // O(n2)
-
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) return new int[]{i,j};
@@ -40,12 +39,12 @@ public class TwoSum {
 
     static int[] twoSumTwoPointer(int[] nums, int target){ //O(nlogn)
 
-        Arrays.sort(nums);
+        Arrays.sort(nums); //O(nlogn)   2,5,7,9    16
         int start = 0;
         int end = nums.length - 1;
 
         while(start < end){
-            if (nums[start] + nums[end] == target) return new int[]{start,end};
+            if (nums[start] + nums[end] == target) return new int[]{start,end}; // O(n)
             else if (nums[start] + nums[end] > target) {
                 end--;
             }else {

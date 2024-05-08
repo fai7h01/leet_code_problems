@@ -28,7 +28,7 @@ public class MergeSortedArray {
 
     private static void mergeTwoPointerSolution(int[] nums1, int m, int[] nums2, int n){
 
-        // time complexity : O(m+n) --> On
+        // time complexity : O(m+n) --> On O(n) + O(m) -> O(n)
         // space complexity : O(1)
 
         int i = m - 1;

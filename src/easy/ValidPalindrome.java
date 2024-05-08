@@ -18,6 +18,8 @@ public class ValidPalindrome {
         int start = 0;
         int end = s.length() - 1;
 
+        System.out.println(s);
+
         while(start <= end){
             if (s.charAt(start) == s.charAt(end)){
                 start++;

@@ -6,13 +6,14 @@ public class LongestCommonPrefix {
 
     public static void main(String[] args) {
 
-        System.out.println(longestCommonPrefix(new String[]{"flower","flow","flight"}));
+        System.out.println(longestCommonPrefix(new String[]{"aaa","aa","aaa"}));
 
     }
 
     public static String longestCommonPrefix(String[] strs) {
 
         Arrays.sort(strs);
+        System.out.println(Arrays.toString(strs));
         String s1 = strs[0];
         String s2 = strs[strs.length - 1];
         int index = 0;
@@ -26,7 +27,6 @@ public class LongestCommonPrefix {
         }
 
         return s1.substring(0, index);
-
     }
 
 }
