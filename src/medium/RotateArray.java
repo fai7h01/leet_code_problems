@@ -1,7 +1,5 @@
 package medium;
 
-import java.util.Arrays;
-
 public class RotateArray {
 
     private static void rotate(int[] nums, int k){

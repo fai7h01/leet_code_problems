@@ -37,8 +37,6 @@ public class RemoveLinkedListElements {
 
 }
 
-
-
 class ListNode{
 
     int val;
