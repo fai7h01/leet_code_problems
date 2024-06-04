@@ -2,6 +2,25 @@ package easy;
 
 public class RemoveLinkedListElements {
 
+    static class ListNode {
+
+        int val;
+        ListNode next;
+
+        public ListNode() {
+        }
+
+
+        public ListNode(int val) {
+            this.val = val;
+        }
+
+        public ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
     public static void main(String[] args) {
 
         ListNode node1 = new ListNode(7);
@@ -17,39 +36,22 @@ public class RemoveLinkedListElements {
 
     // 1 2 6 3 4 5 6
 
-    static ListNode removeElements(ListNode head, int val){
+    static ListNode removeElements(ListNode head, int val) {
 
-       if (head == null) return null;
-       ListNode node = new ListNode(0);
-       node.next = head;
-       ListNode current = node;
+        if (head == null) return null;
+        ListNode node = new ListNode(0);
+        node.next = head;
+        ListNode current = node;
 
-       while (current.next != null){
-           if (current.next.val == val){
-               current.next = current.next.next;
-           }else{
-               current = current.next;
-           }
-       }
-       return node.next;
+        while (current.next != null) {
+            if (current.next.val == val) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+        return node.next;
     }
 
 
-}
-
-class ListNode{
-
-    int val;
-    ListNode next;
-
-    public ListNode(){};
-
-    public ListNode(int val){
-        this.val = val;
-    }
-
-    public ListNode(int val, ListNode next){
-        this.val = val;
-        this.next = next;
-    }
 }
