@@ -2,8 +2,8 @@ package easy;
 
 public class ListNode {
 
-    int val;
-    easy.ListNode next;
+    public int val;
+    public ListNode next;
 
     public ListNode() {
     }
