@@ -1,7 +1,7 @@
 package medium;
 
 import easy.ListNode;
-import test.MySinglyLinkedList;
+import linkedList.MySinglyLinkedList;
 
 public class DeleteNodeInLL {
 

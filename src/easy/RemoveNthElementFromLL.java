@@ -7,7 +7,7 @@ public class RemoveNthElementFromLL {
         ListNode p1 = head;
         ListNode p2 = head;
         ListNode prev = null;
-        ListNode tail = null;
+        ListNode tail;
 
         for (int i = 0; i < n - 1; i++) {
             p2 = p2.next;

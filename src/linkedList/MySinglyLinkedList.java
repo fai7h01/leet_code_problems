@@ -1,4 +1,4 @@
-package test;
+package linkedList;
 
 import easy.ListNode;
 

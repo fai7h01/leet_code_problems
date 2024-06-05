@@ -1,9 +1,8 @@
 package medium;
 
 import easy.ListNode;
-import test.MySinglyLinkedList;
+import linkedList.MySinglyLinkedList;
 
-import java.util.LinkedList;
 import java.util.Stack;
 
 public class RemoveNodesFromLL {
