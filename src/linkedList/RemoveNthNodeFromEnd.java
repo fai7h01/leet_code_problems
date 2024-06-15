@@ -36,9 +36,10 @@ public class RemoveNthNodeFromEnd {
 
         ListNode p1 = head;
         ListNode p2 = head;
-        ListNode prev = null, tail = null;
+        ListNode prev = null;
+        ListNode tail = null;
 
-        for (int i = 0; i < n - 1 ; i++) {
+        for (int i = 0; i < n - 1; i++) {
             p2 = p2.next;
         }
 
@@ -47,11 +48,13 @@ public class RemoveNthNodeFromEnd {
             p1 = p1.next;
             p2 = p2.next;
         }
+
         tail = p2;
+
         if (p1 == head){
             head = p1.next;
             p1.next = null;
-        }else if (p1 == tail){
+        } else if (p1 == tail) {
             tail = prev;
             prev.next = null;
         }else{
@@ -59,6 +62,9 @@ public class RemoveNthNodeFromEnd {
             p1.next = null;
         }
         return head;
+
+
     }
+
 
 }
