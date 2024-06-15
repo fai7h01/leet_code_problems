@@ -21,20 +21,21 @@ public class PalindromeLinkedList {
 
     public static boolean isPalindrome(ListNode head){
 
-        ListNode slow = head;
-        ListNode fast = head;
-        System.out.println("slow pointer: " + slow.val);
-        System.out.println("fast pointer: " + fast.val);
-        System.out.println("-------------------------------");
-        while(fast.next != null){
-            slow = slow.next;
-            System.out.println("slow pointer: " + slow.val);
-            fast = fast.next.next;
-            System.out.println("fast pointer: " + fast.val);
-            System.out.println("-------------------------------");
-        }
-        return false;
+        if (head == null || head.next == null) return true;
 
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while(fast!=null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode reversedHalf = reverse(slow.next);
+        while(reversedHalf != null){
+            if (head.val != reversedHalf.val) return false;
+            head = head.next;
+            reversedHalf = reversedHalf.next;
+        }
+        return true;
 
 
     }
@@ -43,7 +44,7 @@ public class PalindromeLinkedList {
 
         ListNode prev = null;
         ListNode current = head;
-        while(current != null){
+        while(current!=null){
             ListNode nextNode = current.next;
             current.next = prev;
             prev = current;
