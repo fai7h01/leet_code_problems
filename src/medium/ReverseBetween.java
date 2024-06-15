@@ -62,16 +62,34 @@ public class ReverseBetween {
 
     }
 
-    public static ListNode reverse(ListNode head, ListNode tail){
-       ListNode prev = null;
-       ListNode current = head;
-       while (current != tail.next){
-           ListNode nextNode = current.next;
-           current.next = prev;
-           prev = current;
-           current = nextNode;
-       }
-       return prev;
+    public static ListNode reverseBetweenTest(ListNode head, int left, int right){
+
+        if (head == null || head.next == null) return head;
+
+        ListNode dummyNode = new ListNode();
+        dummyNode.next = head;
+
+        ListNode current = head;
+        ListNode prev = dummyNode;
+
+        for (int i = 1; i < left; i++) {
+            current = current.next;
+            prev = prev.next;
+        }
+
+        ListNode sublistHead = current;
+        ListNode prevNode = null;
+
+        for (int i = 1; i < right - left + 1; i++) {
+            ListNode nextNode = current.next;
+            current.next = prev;
+            prev = current;
+            current = nextNode;
+        }
+        prev.next = prevNode;
+        sublistHead.next = current;
+        return dummyNode.next;
+
     }
 
 }
