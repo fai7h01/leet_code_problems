@@ -15,7 +15,7 @@ public class MergeTwoSortedList {
                 list1 = list1.next;
             }else{
                 prev.next = list2;
-                list2 = list1.next;
+                list2 = list2.next;
             }
             prev = prev.next;
         }
