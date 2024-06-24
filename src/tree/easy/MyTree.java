@@ -61,5 +61,30 @@ public class MyTree {
 
     }
 
+    //Depth first
+    //pre-order traversal
+    void preOrderTraversal(TreeNode root){
+        if (root == null) return;
+        System.out.print(root.value + ", ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+
+    //in-order traversal ===> ascending
+    void inOrderTraversal(TreeNode root){
+        if (root == null) return;
+        inOrderTraversal(root.left);
+        System.out.print(root.value + ", ");
+        inOrderTraversal(root.right);
+    }
+
+    //post-order traversal
+    void postOrderTraversal(TreeNode root){
+        if (root == null) return;
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.print(root.value + ", ");
+    }
+
 
 }
