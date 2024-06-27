@@ -17,4 +17,19 @@ public class LowestCommonAncestor {
 
     }
 
+    static TreeNode lca(TreeNode root, TreeNode p, TreeNode q){ //BST
+
+        if (root == null) return null;
+
+        if (p.value < root.value && q.value < root.value){
+            return lca(root.left,p,q);
+        }
+
+        if (p.value > root.value && q.value > root.value){
+            return lca(root.right,p,q);
+        }
+
+        return root;
+    }
+
 }
