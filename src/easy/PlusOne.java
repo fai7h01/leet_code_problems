@@ -13,17 +13,20 @@ public class PlusOne {
 
     }
 
-    private static int[] plusOne(int[] digits){
 
-        String str = Arrays.stream(digits).mapToObj(String::valueOf)
-                .reduce("",(s1,s2) -> s1 + s2);
+    static int[] plusOne(int[] digits){
 
-        String plusOne = String.valueOf(new BigInteger(str).add(BigInteger.ONE));
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
+        }
 
-        return Arrays.stream(plusOne.split("")).mapToInt(Integer::parseInt).toArray();
-
-
-
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
     }
 
 }
