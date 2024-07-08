@@ -1,5 +1,6 @@
 package array.medium;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -11,6 +12,7 @@ public class KthLargestElement {
         int[] nums = {3,2,1,5,6,4};
         int k = 2;
         System.out.println(kthLargest(nums,k));
+        System.out.println(kthLargestUsingSort(nums,k));
 
     }
 
@@ -30,4 +32,8 @@ public class KthLargestElement {
         return maxHeap.peek();
     }
 
+    static int kthLargestUsingSort(int[] nums, int k){
+        Arrays.sort(nums);
+        return nums[nums.length - k];
+    }
 }
